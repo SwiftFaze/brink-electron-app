@@ -1,6 +1,47 @@
-<mat-toolbar class="main-menu">
-  <button mat-button>Home</button>
-  <button mat-button>My projects</button>
-  <button mat-button>Settings</button>
-  <button mat-button>Logout</button>
-</mat-toolbar>
+<!--<mat-toolbar class="main-menu">-->
+<!--    <div class="main-menu-main-buttons">-->
+<!--        <button mat-icon-button class="main-menu-button" (click)="goToPage('home')">-->
+<!--            <mat-icon>home</mat-icon>-->
+<!--        </button>-->
+<!--        <button mat-icon-button class="main-menu-button" (click)="goToPage('project')">-->
+<!--            <mat-icon>folder</mat-icon>-->
+<!--        </button>-->
+<!--    </div>-->
+<!--    <div class="main-menu-title">-->
+<!--        <h1>Brink</h1>-->
+<!--    </div>-->
+<!--    <div class="main-menu-option-buttons">-->
+<!--        <button mat-icon-button class="main-menu-option-button">-->
+<!--            <mat-icon>logout</mat-icon>-->
+<!--        </button>-->
+<!--        <button mat-icon-button class="main-menu-option-button">-->
+<!--            <mat-icon>settings</mat-icon>-->
+<!--        </button>-->
+
+<!--    </div>-->
+<!--</mat-toolbar>-->
+
+
+<ng-container *ngIf="myMenuRoutes != null">
+    <div class="menuList">
+        <ng-container *ngFor="let item in myMenuRoutes">
+
+                    <div *ngIf="item.type == 0" (click)="gotoPage(item.route)">
+
+                        <mat-icon>{{ item.icon }}</mat-icon>
+                        <div>{{item.title}}</div>
+                    </div>
+
+
+
+
+                <div class="line" *ngIf="item.type == 1"></div>
+                <div *ngIf="item.type == 2" (click)="gotoPage(item.route)">
+                    <mat-icon>{{ item.icon }}</mat-icon>
+                    <div>{{item.title}}</div>
+                </div>
+        </ng-container>
+    </div>
+</ng-container>
+
+
