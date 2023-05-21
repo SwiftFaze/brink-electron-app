@@ -1,0 +1,16 @@
+[
+  {
+    "id": 1,
+    "type": 0,
+    "icon": "home",
+    "route": "/home",
+    "title": "Accueil"
+  },
+  {
+    "id": 2,
+    "type": 0,
+    "icon": "project",
+    "route": "/project",
+    "title": "Gestion des projets"
+  }
+]

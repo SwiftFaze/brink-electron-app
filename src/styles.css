@@ -1,0 +1,8 @@
+@import '@angular/material/prebuilt-themes/pink-bluegrey.css';
+
+.center{
+    font-size: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
