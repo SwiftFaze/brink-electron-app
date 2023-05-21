@@ -1,27 +1,98 @@
 # BrinkElectronApp
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.0.2.
+## Clone
+```bash
+$ git clone https://github.com/SwiftFaze/brink-electron-app.git
+$ npm install
+$ npm run build:dev:all
+$ npm start
+```
 
-## Development server
+## NPM scripts
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-## Code scaffolding
+### Start up
+1. `npm install`
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+2. `npm run start:electron`
 
-## Build
+### Builds
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+This builds a project and places the output in the */dist* folder.
 
-## Running unit tests
+| Command | Description |
+| --- | --- |
+| `npm run build:dev:all` | Developer builds of all projects |
+| `npm run build:prod:all` | Production builds of all projects |
+| `npm run build:dev:main` | Developer build of the *Electron main* project |
+| `npm run build:prod:main` | Production build of the *Electron main* project |
+| `npm run build:dev:renderer` | Developer build of the *Electron renderer* project |
+| `npm run build:prod:renderer` | Production build of the *Electron renderer* project |
+| `npm run build:dev:preload` | Developer build of the *Electron preload* project |
+| `npm run build:prod:preload` | Production build of the *Electron preload* project |
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### Watch
 
-## Running end-to-end tests
+Start watching for source code changes, and builds after each source code change.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+| Command | Description |
+| --- | --- |
+| `npm run build:watch:all` | Watch all projects |
+| `npm run build:watch:main` | Watch the *Electron main* project |
+| `npm run build:watch:renderer` | Watch the *Electron renderer* project |
+| `npm run build:watch:preload` | Watch the *Electron preload* project |
 
-## Further help
+### Tests
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Test commands.
+
+| Command | Description |
+| --- | --- |
+| `npm run test:test` | Executes all Angular unit-tests |
+| `npm run test:e2e` | Executes Angular end-2-end tests |
+| `npm run test:lint` | Angular lint |
+
+### Updates
+
+Commands for updating NPM modules.
+
+| Command | Description |
+| --- | --- |
+| `npm run update:angular` | Easy update to latest stable Angular |
+| `npm run update:electron` | Easy update to latest stable Electron |
+| `npm run update:webpack` | Easy update to latest stable WebPack |
+
+### Packaging
+
+| Command | Description |
+| --- | --- |
+| `npm run package` | Package current */dist* folder into an app in the */release-builds* folder |
+| `npm run release` | First build a production build, then package */dist* folder into an app in the */release-builds* folder |
+
+## Debugging
+
+![Screenshots](/images/debug-electron-main-renderer.PNG)
+
+Use [Code](https://code.visualstudio.com/) to get a super debug environment.
+
+This extension is needed: [Debugger for Chrome](https://marketplace.visualstudio.com/items?itemName=msjsdiag.debugger-for-chrome)
+
+First be sure to have build everything:
+
+```bash
+$ npm run build:dev:all
+```
+
+Now set some breakpoints both in the main source code and in the renderer source code.
+
+From Code press **Ctrl+Shift+D** and select **Main + Renderer** and press **F5**
+
+## Packaging into an app
+
+This is where all the magic happens.
+
+```bash
+$ npm run release
+```
+
+Then your app will be put into the */release-builds* folder. Can build an app for Windows, macOS and Linux.
