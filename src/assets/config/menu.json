@@ -4,13 +4,27 @@
     "type": 0,
     "icon": "home",
     "route": "/home",
-    "title": "Accueil"
+    "title": "Home"
   },
   {
     "id": 2,
     "type": 0,
-    "icon": "project",
+    "icon": "folder",
     "route": "/project",
-    "title": "Gestion des projets"
+    "title": "Projects"
+  },
+  {
+    "id": 3,
+    "type": 2,
+    "icon": "settings",
+    "route": "/settings",
+    "title": "Settings"
+  },
+  {
+    "id": 3,
+    "type": 2,
+    "icon": "logout",
+    "route": "/logout",
+    "title": "Logout"
   }
 ]

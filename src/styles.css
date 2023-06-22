@@ -1,8 +1,38 @@
 @import '@angular/material/prebuilt-themes/pink-bluegrey.css';
 
-.center{
-    font-size: 80px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+:root {
+    --main-accent-color: rgb(253, 76, 76);
+    --main-secondary-color: rgb(0, 142, 142);
+    --main-light-secondary-color: rgb(157, 201, 201);
+
+    --menu-hover-color: rgba(142, 0, 0, 0.25);
+    --action-secondary-hover-color: rgba(56, 166, 170, 0.25);
+
+    --main-text-color: rgb(52, 52, 52);
+    --main-accent-text-color: white;
+
+    --main-background: rgb(229, 232, 239);
+    --main-green-color: rgb(86, 206, 170);
+    --main-red-color: rgb(186, 89, 119);
+
+    /* Variables pour la barre de Menu */
+    --sidenav-background-color: white;
+    --sidenav-menu-background-color: white;
+    --sidenav-menu-actif-background-color: rgb(142, 0, 0);
+    --sidenav-menu-actif-text-color: white;
+    --sidenav-menu-hover-color: rgba(142, 0, 0, 0.25);
+    --sidenav-menu-text-hover-color: white;
+    --sidenav-menu-text-color: rgb(142, 0, 0);
+    --hover-shadow-color: rgba(0, 0, 0, 0.27);
+}
+
+html, body {
+    height: 100%;
+    /*background-color: var(--main-background);*/
+    color: var(--main-text-color);
+
+}
+
+body {
+    margin: 0;
 }

@@ -1,47 +1,24 @@
-<!--<mat-toolbar class="main-menu">-->
-<!--    <div class="main-menu-main-buttons">-->
-<!--        <button mat-icon-button class="main-menu-button" (click)="goToPage('home')">-->
-<!--            <mat-icon>home</mat-icon>-->
-<!--        </button>-->
-<!--        <button mat-icon-button class="main-menu-button" (click)="goToPage('project')">-->
-<!--            <mat-icon>folder</mat-icon>-->
-<!--        </button>-->
-<!--    </div>-->
-<!--    <div class="main-menu-title">-->
-<!--        <h1>Brink</h1>-->
-<!--    </div>-->
-<!--    <div class="main-menu-option-buttons">-->
-<!--        <button mat-icon-button class="main-menu-option-button">-->
-<!--            <mat-icon>logout</mat-icon>-->
-<!--        </button>-->
-<!--        <button mat-icon-button class="main-menu-option-button">-->
-<!--            <mat-icon>settings</mat-icon>-->
-<!--        </button>-->
+<mat-toolbar class="main-menu">
+    <div *ngFor="let item of myMenuRoutes">
 
-<!--    </div>-->
-<!--</mat-toolbar>-->
-
-
-<ng-container *ngIf="myMenuRoutes != null">
-    <div class="menuList">
-        <ng-container *ngFor="let item in myMenuRoutes">
-
-                    <div *ngIf="item.type == 0" (click)="gotoPage(item.route)">
-
-                        <mat-icon>{{ item.icon }}</mat-icon>
-                        <div>{{item.title}}</div>
-                    </div>
-
-
-
-
-                <div class="line" *ngIf="item.type == 1"></div>
-                <div *ngIf="item.type == 2" (click)="gotoPage(item.route)">
-                    <mat-icon>{{ item.icon }}</mat-icon>
-                    <div>{{item.title}}</div>
-                </div>
-        </ng-container>
+        <div *ngIf="item.type == 0" class="left-menu-item">
+            <button mat-icon-button (click)="goToPage(item)">
+                <mat-icon>{{item.icon}}</mat-icon>
+            </button>
+        </div>
     </div>
-</ng-container>
+    <div class="center-menu-item">
+        <span class="modeDevIcon" *ngIf="this.isDevMode">{{environment.appTitle}}</span>
+        <span *ngIf="!this.isDevMode">{{environment.appTitle}}</span>
+    </div>
+    <div *ngFor="let item of myMenuRoutes">
+        <div *ngIf="item.type == 2" class="right-menu-item">
+            <button mat-icon-button (click)="goToPage(item)">
+                <mat-icon>{{item.icon}}</mat-icon>
+            </button>
+        </div>
+    </div>
+
+</mat-toolbar>
 
 

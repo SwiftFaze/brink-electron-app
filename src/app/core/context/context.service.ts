@@ -13,7 +13,6 @@ export class ContextService {
     constructor() {
         this.initialize();
     }
-
     private initialize() {
         this.appsContext = new AppsContext();
     }
@@ -21,6 +20,7 @@ export class ContextService {
 
     public setMenuIndex(indexMenu: number) {
         this.appsContext.activeMenu = indexMenu;
+        console.log(indexMenu)
     }
 
 

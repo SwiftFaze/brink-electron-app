@@ -5,18 +5,29 @@
     display: flex;
 }
 
-.main-menu-option-button {
-    float: right;
+.left-menu-item {
+    flex: 1;
 }
 
-.main-menu-option-buttons {
+.right-menu-item {
     flex: 1;
 }
-.main-menu-main-buttons {
-    flex: 1;
-}
-.main-menu-title {
-    flex: 1;
+
+.center-menu-item {
+    flex: 3;
     text-align: center;
+}
+
+.modeDevIcon {
+    animation: blinker 2s linear infinite;
+    font-weight: bold;
+    color: var(--main-accent-color);
+    text-align: center;
+}
+
+@keyframes blinker {
+    50% {
+        opacity: 0;
+    }
 }
 
