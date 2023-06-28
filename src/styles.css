@@ -1,4 +1,4 @@
-@import '@angular/material/prebuilt-themes/pink-bluegrey.css';
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
 
 :root {
     --main-accent-color: rgb(253, 76, 76);
@@ -26,13 +26,9 @@
     --hover-shadow-color: rgba(0, 0, 0, 0.27);
 }
 
-html, body {
-    height: 100%;
-    /*background-color: var(--main-background);*/
-    color: var(--main-text-color);
 
-}
 
-body {
-    margin: 0;
-}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+

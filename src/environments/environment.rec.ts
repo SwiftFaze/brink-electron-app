@@ -4,5 +4,5 @@ export const environment = {
     appName: 'BRINK',
     appTitle: 'BRINK',
     logoCustom: true,
-    // apiApp: 'http://localhost:8080/brink',
+    // apiApp: 'http://localhost:8080/v1',
 };

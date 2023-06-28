@@ -13,7 +13,11 @@ import {AppRoutingModule} from "./app-routing.module";
 import {MatSidenavModule} from "@angular/material/sidenav";
 import {CommonModule} from '@angular/common';
 import { SettingsPageComponent } from './pages/settings-page/settings-page.component';
-
+import {MatFormFieldModule} from "@angular/material/form-field";
+import {BrowserAnimationsModule} from
+        '@angular/platform-browser/animations';
+import { FormsModule } from '@angular/forms';
+import {MatInputModule} from '@angular/material/input';
 @NgModule({
     declarations: [
         AppComponent,
@@ -30,7 +34,11 @@ import { SettingsPageComponent } from './pages/settings-page/settings-page.compo
         MatIconModule,
         AppRoutingModule,
         MatSidenavModule,
-        CommonModule
+        CommonModule,
+        MatFormFieldModule,
+        MatInputModule,
+        FormsModule,
+        BrowserAnimationsModule
     ],
     providers: [],
     bootstrap: [AppComponent]
