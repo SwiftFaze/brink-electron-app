@@ -72,4 +72,23 @@ export class ProjectPageComponent implements OnInit {
         return minorVersion ?? '';
     }
 
+
+
+    uploadFolder(event: any): void {
+        const selectedFiles = event.target.files;
+        if (selectedFiles) {
+            const formData = new FormData();
+            for (let i = 0; i < selectedFiles.length; i++) {
+                formData.append('file', selectedFiles[i]);
+            }
+            this.abletonProjectService.sendFiles(formData).subscribe(
+                result => {
+                    console.log(result);
+                },
+                error => {
+                    console.log(error);
+                }
+            );
+        }
+    }
 }

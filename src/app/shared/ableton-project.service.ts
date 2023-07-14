@@ -17,4 +17,16 @@ export class AbletonProjectService {
         return this.http.post<AbletonProject>(this.basePath + '/projects', xmlString);
     }
 
+    // sendFile(file: File): Observable<any> {
+    //     const formData = new FormData();
+    //     formData.append('file', file);
+    //
+    //     return this.http.post<any>(this.basePath + '/upload', formData);
+    // }
+
+    sendFiles(formData: FormData): Observable<any> {
+        return this.http.post<any>(this.basePath + '/upload', formData);
+    }
+
+
 }
