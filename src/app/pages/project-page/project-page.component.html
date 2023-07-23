@@ -5,12 +5,23 @@
     </mat-form-field>
 </form>
 
-<h2>convert file</h2>
-<input type="file" (change)="convertAbletonProject($event)">
+<button mat-raised-button (click)="fileInput.click()">Convert project</button>
+<input #fileInput type="file" (change)="convertAbletonProject($event)" style="display:none" />
+
+<br>
+<br>
 
 
-<h2>send file</h2>
+<button mat-raised-button (click)="folderInput.click()">Upload project</button>
+<input #folderInput type="file" webkitdirectory directory multiple (change)="uploadFolder($event)" style="display:none" />
 
-<input type="file" webkitdirectory directory multiple (change)="uploadFolder($event)" />
-<p>{{testing}}</p>
+<br>
+<br>
 
+
+<button mat-raised-button (click)="getUserProjects()">List projects</button>
+<div>
+    <ul>
+        <li *ngFor="let projectName of userProjects">{{projectName}}</li>
+    </ul>
+</div>

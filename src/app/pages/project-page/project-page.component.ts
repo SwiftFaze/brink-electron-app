@@ -13,6 +13,8 @@ export class ProjectPageComponent implements OnInit {
 
 
     testing: string = "nothing"
+    userProjects: string[] = [];
+
     constructor(private contextService: ContextService, private abletonProjectService: AbletonProjectService) {
         this.contextService.setMenuIndex(Menu.MENU_PROJECTS)
     }
@@ -55,7 +57,7 @@ export class ProjectPageComponent implements OnInit {
         this.decompressALS(alsFile)
             .then((decompressedData: string) => {
                 console.log(decompressedData);
-                this.abletonProjectService.getProject(decompressedData).subscribe(result => {
+                this.abletonProjectService.convertProject(decompressedData).subscribe(result => {
                     console.log(result)
                 });
             })
@@ -71,7 +73,6 @@ export class ProjectPageComponent implements OnInit {
         const minorVersion = abletonNode.getAttribute('MinorVersion');
         return minorVersion ?? '';
     }
-
 
 
     uploadFolder(event: any): void {
@@ -90,5 +91,12 @@ export class ProjectPageComponent implements OnInit {
                 }
             );
         }
+    }
+
+    getUserProjects() {
+        this.abletonProjectService.getUserProjects().subscribe(projectList => {
+            console.log(projectList)
+            this.userProjects = projectList;
+        });
     }
 }
