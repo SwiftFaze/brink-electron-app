@@ -14,18 +14,11 @@ export class AbletonProjectService {
     private basePath = environment.apiApp;
 
     convertProject(xmlString: string): Observable<AbletonProject> {
-        return this.http.post<AbletonProject>(this.basePath + '/convert', xmlString);
+        return this.http.post<AbletonProject>(this.basePath + '/projects/convert', xmlString);
     }
 
-    // sendFile(file: File): Observable<any> {
-    //     const formData = new FormData();
-    //     formData.append('file', file);
-    //
-    //     return this.http.post<any>(this.basePath + '/upload', formData);
-    // }
-
     sendFiles(formData: FormData): Observable<any> {
-        return this.http.post<any>(this.basePath + '/upload', formData);
+        return this.http.post<any>(this.basePath + '/projects/upload', formData);
     }
 
     getUserProjects(): Observable<string[]> {
