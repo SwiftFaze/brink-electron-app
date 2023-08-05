@@ -3,6 +3,8 @@ import {ContextService} from "../../core/context/context.service";
 import {Menu} from "../../shared/constants/menu";
 import {inflate} from 'pako';
 import {AbletonProjectService} from "../../shared/ableton-project.service";
+import * as JSZip from 'jszip';
+import { saveAs } from 'file-saver';
 
 @Component({
     selector: 'app-project-page',
@@ -11,7 +13,7 @@ import {AbletonProjectService} from "../../shared/ableton-project.service";
 })
 export class ProjectPageComponent implements OnInit {
 
-
+    notification: string = '';
     testing: string = "nothing"
     userProjects: string[] = [];
 
@@ -23,10 +25,15 @@ export class ProjectPageComponent implements OnInit {
     ngOnInit(): void {
         this.testing = "nothing"
         console.log("Project page!")
+
     }
 
 
-    applyFilter($event: KeyboardEvent) {
+    getProject() {
+        this.abletonProjectService.getProject(2).subscribe(data => {
+            const blob = new Blob([data], { type: 'application/zip' });
+            saveAs(blob, 'project.zip'); // Change the filename as needed
+        });
 
     }
 

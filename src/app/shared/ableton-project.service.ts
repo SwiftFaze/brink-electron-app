@@ -24,4 +24,14 @@ export class AbletonProjectService {
     getUserProjects(): Observable<string[]> {
         return this.http.get<string[]>(this.basePath + '/projects');
     }
+
+
+    getProject(projectId: number): Observable<any> {
+        return this.http.get(this.basePath + '/projects/download/' + projectId, {
+            responseType: 'arraybuffer' as 'json',
+        });
+    }
+
+
+
 }
